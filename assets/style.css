@@ -118,7 +118,7 @@ section{
     font-size: 24px;
     margin: 0;
 }
-hero.form p{
+.hero-form p{
     margin: 5px 0 15px 0;
 }
 .form-input{
@@ -143,7 +143,7 @@ hero.form p{
     text-align: center;
 }
 
-}
+
 .intro p{
     line-height: 1.7;
     color: #39a6b2;
@@ -166,12 +166,14 @@ hero.form p{
 
 /*section title style*/
 .section-title{
+    
     font-size: 55px;
     color: #024e76;
     margin-bottom: 35px;
     padding: 0 100px 20px 100px;
     display: inline-block;
     border-bottom: 3px solid;
+    text-align: center;
 }
 
 /*borders*/
@@ -201,6 +203,9 @@ hero.form p{
 }
 
 /*meet the trainers style----------------------*/
+.trainers{
+    text-align: center;
+}
 .trainer{
     width: 900px;
     text-align: center;
