@@ -13,4 +13,4 @@ https://a-wonderfull-galaxy.github.io/run-buddy/
 ## Contribution
 Made with ❤️ by Marlon
 
-###Run Buddy, Inc 
+### 2019@ Run Buddy, Inc 
