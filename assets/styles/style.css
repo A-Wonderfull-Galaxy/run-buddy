@@ -29,12 +29,20 @@ header{
     flex-wrap: wrap;
     padding: 20px 35px;
     background-color: #39a6b2;
+    position: sticky;
+    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-attachment: fixed;
+    background-position: 80%;
 }
 header h1{
     font-weight: bold;
     margin: 0;
     font-size: 36px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 header a{
     text-decoration: none;
@@ -54,29 +62,34 @@ header nav ul li a{
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 /*----------------------------------------*/
 
 /* homepage hero style-------------------------*/
 .hero{
     background-image:url("../images/hero-bg.jpg");
-    height: 600px;
+    
     background-size: cover;
     background-position: center;
     position: relative;
     align-items: flex-start;
+    background-attachment: fixed;
+    background-position: 80%;
 }
 .hero-form{
     border: solid 3px #024e76;
-    background-color: #fce138;
+    background-color: rgba(252, 225, 56, 80%);
     padding: 20px;
     width: 500px;
     width: 40%;
     margin: 3.5%;
     color: #024e76;
-    position: absolute;
+    
     bottom: 120px;
     right: 140px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 15px;
 }
 .hero-form p{
     margin: 5px 0 15px 0;
@@ -95,6 +108,8 @@ header nav ul li a{
     font-size: 16px;
     width:100%;
     margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgba(255,255,255, 0.75);
 }
 .hero-form button{
     color: #fce138;
@@ -116,6 +131,7 @@ header nav ul li a{
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 /*--------------------------*/
 
@@ -267,6 +283,7 @@ header nav ul li a{
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
+    border-radius: 15px;
 }
 .contact-form button{
     width: 100%;
@@ -276,6 +293,7 @@ header nav ul li a{
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 15px;
 }
 .contact-info a{
     color: #fce138;
@@ -382,6 +400,9 @@ footer a{
     .contact-info iframe{  
         flex: 1 100%;
     }
+    header{
+        position: relative;
+    }
 }
 
 /*meadia query for tablers and smaller */
@@ -439,4 +460,29 @@ footer a{
 /*re ordered contact form*/
 .contact-form {
     order: 3;
+}
+
+.some-class{
+    text-shadow: 5px 10px 15px black;
+    box-shadow: 5px 10px 15px rgba(0,0,0,0.25);
+}
+
+header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
+  }
+  
+  .hero-form button:hover {
+    background-color: #39a6b2;  
+  }
+  
+  .contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
+  }
+
+.form-input:focus {
+    background-color: rgba(255,255,255, 1);
 }
