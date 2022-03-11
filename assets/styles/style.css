@@ -1,12 +1,10 @@
-/*root*/
+/*root changes variable*/
 :root{
     --primary-color: #fce138;
     --secondary-color: #024e76;
     --tertiary-color: #39a6b2;
 
 }
-
-
 
 /*give style to everything*/
 *{
@@ -15,24 +13,14 @@
     box-sizing: border-box;
 }
 
-/*body style*/
+/*body default for all style*/
 body{
     color: var(--tertiary-color);
     font-family: Arial, Helvetica, sans-serif;    
 }
 
-/*h1 style*/
-h1{
-    font-size: 100px;
-}
 
-/*section style*/
-section{
-    padding: 60px;
-}
-
-
-/*header style-----------------------------*/
+/*header style--*/
 header{
     display: flex;
     justify-content: space-between;
@@ -41,9 +29,11 @@ header{
     background-color: var(--tertiary-color);
     position: sticky;
     top: 0;
-    position: -webkit-sticky;
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
+    background-image: url("../images/hero-bg.jpg");
+    background-size: cover;
     background-attachment: fixed;
     background-position: 80%;
     z-index: 1;
@@ -75,30 +65,36 @@ header nav ul li a{
     font-size: 1.55vw;
     text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-/*----------------------------------------*/
+header nav ul li a:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 15px;
+    text-shadow: none;
+}
+/*------------end---------------*/
 
-/* homepage hero style-------------------------*/
+/* homepage hero style----------*/
 .hero{
     background-image:url("../images/hero-bg.jpg");
-    
     background-size: cover;
     background-position: center;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     align-items: flex-start;
     background-attachment: fixed;
     background-position: 80%;
 }
 .hero-form{
     border: solid 3px var(--secondary-color);
-    background-color: rgba(252, 225, 56, 80%);
+    background-color: rgba(252, 225, 56, 0.8);
     padding: 20px;
-    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 40%;
     margin: 3.5%;
     color: var(--secondary-color);
-    
-    bottom: 120px;
-    right: 140px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     border-radius: 15px;
 }
@@ -109,17 +105,15 @@ header nav ul li a{
     font-size: 24px;
     margin: 0;
 }
-.hero-form p{
-    margin: 5px 0 15px 0;
-}
 .form-input{
     border: 1px solid var(--secondary-color);
     display: block;
     padding: 7px 15px;
     font-size: 16px;
+    color: var(--secondary-color);
     width:100%;
     margin-bottom: 15px;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: rgba(255,255,255, 0.75);
 }
 .hero-form button{
@@ -128,12 +122,24 @@ header nav ul li a{
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 10px;
+}
+.form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
+}
+.hero-form label{
+    margin: 0 5px;
+}
+.hero-form button:hover {
+    background-color: var(--tertiary-color);  
 }
 /*--*/
 /*hero cta style*/
 .hero-cta{
     width: 35%;
     text-align: right;
+    margin: 3.5%;
     color: #fff;
     font-size: 18px;
     line-height: 1.2;
@@ -144,20 +150,8 @@ header nav ul li a{
     color: var(--primary-color);
     text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-/*--------------------------*/
+/*----------end------------*/
 
-/*Intro style--------------*/
-
-.intro p{
-    text-align: center;
-    line-height: 1.7;
-    color: var(--tertiary-color);
-    width: 80%;
-    font-size: 20px;
-    display: inline-block;
-    margin: 0 auto;
-}
-/*------*/
 /*section title style*/
 .section-title{
     padding-bottom: 20px;
@@ -167,9 +161,22 @@ header nav ul li a{
     margin: 0 auto 35px auto;
     width: 50%;
     border-bottom: 3px solid;
-    text-align: center;
 }
-/*----*/
+/*--end--*/
+
+/*Intro style--------------*/
+.intro p{
+    text-align: center;
+    line-height: 1.7;
+    color: var(--tertiary-color);
+    width: 80%;
+    font-size: 20px;
+    display: inline-block;
+    margin: 0 auto;
+}
+/*---------end-------*/
+
+/*selection title style*/
 .selection-title{
     font-size: 55px;
     display: inline-block;
@@ -178,14 +185,15 @@ header nav ul li a{
     margin-bottom: 35px;
     color: var(--secondary-color);
 }
-/*---*/
-/*step style-------------------*/
+/*----end----*/
+
+/*step style--------------*/
 .steps{
     background: var(--primary-color);
 }
 .step{
     margin: 50px auto;
-    padding: 50px;
+    padding-bottom: 50px;
     width: 80%;
     border-bottom: 1px solid var(--tertiary-color);
     display: flex;
@@ -213,6 +221,11 @@ header nav ul li a{
     color: var(--tertiary-color);
     font-size: 18px;
 }
+.step-text h4{
+    color: var(--secondary-color);
+    line-height: 1.5;
+    color: var(--secondary-color);
+}
 .step-img{
     flex: 1 12%;
     margin-right: 20px;
@@ -220,9 +233,19 @@ header nav ul li a{
 .step-img img{
     max-width: 100%;
 }
-/*--------*/
+.step:last-child {
+    border-bottom: 1px solid var(--tertiary-color);
+    border-bottom: none;
+}
+.step:not(:last-child){
+    border-bottom: 1px solid var(--tertiary-color);
+}
+.step:nth-child(even) {
+    border-bottom: 1px solid var(--tertiary-color);
+}
+/*----------end--------------*/
 
-/*trainer styles--------------------*/
+/*trainer styles-------------*/
 .trainers{
     width: 100%;
     margin: 0 auto;
@@ -238,12 +261,9 @@ header nav ul li a{
 }
 .trainer img{
     width: 100%;
-    
 }
 .trainer-bio{
     padding: 25px;
-    
-    
     line-height: 1.3;
 }
 .trainer-bio h3{
@@ -257,14 +277,23 @@ header nav ul li a{
 .trainer-bio p{
     font-size: 17px;
 }
-/*-------------------------*/
+/*-----------end------------*/
 
-/*contact section----------------------*/
+/*contact section-----------*/
 .contact{
     background: var(--secondary-color);
 }
 .contact h2{
     color: var(--primary-color);
+}
+.contact-info{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact-info > *{
+    flex: 1;
+    margin: 15px;
 }
 .contact-info iframe{
     display: flex;
@@ -272,7 +301,6 @@ header nav ul li a{
     flex-wrap: wrap;
 }
 .contact-info div{
-    
     color: white;
 }
 .contact-info h3{
@@ -295,6 +323,7 @@ header nav ul li a{
     margin-bottom: 15px;
     margin-top: 5px;
     border-radius: 15px;
+    background-color: rgba(225,225,225,0.75);
 }
 .contact-form button{
     width: 100%;
@@ -304,20 +333,25 @@ header nav ul li a{
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
-    border-radius: 15px;
+    border-radius: 10px;
+}
+.contact-form button:hover {
+    color: var(--primary-color);
+    background: var(--tertiary-color);
 }
 .contact-info a{
     color: var(--primary-color);
 }
-.contact-info > *{
-    flex: 1;
-    margin: 15px;
-}
-/*----------------------------*/
+/*---------end------------*/
 
-/*footer style------------------------*/
+/*re ordered contact form*/
+.contact-form {
+    order: 3;
+}
+/*------------end----------*/
+
+/*footer style-------------*/
 footer{
-    display:flex;
     justify-content:space-between ;
     flex-wrap: wrap;
     background: var(--primary-color);
@@ -330,24 +364,29 @@ footer h2{
     margin: 0;
 }
 footer div{
-    
     line-height: 1.5;
     text-align: right;
 }
 footer a{
     color: var(--secondary-color);
 }
-/*--------------------------------*/
+/*-------------end--------------*/
+
+/*section default for all style*/
+section{
+    padding: 60px;
+}
+/*-----end---------------------*/
 
 
-/*text align----------------------*/
+/*text align------------------*/
 .text-left{
     text-align: left;
 }
 .text-right{
     text-align: right;
 }
-/*--------------------------------*/
+/*---------------------------*/
 
 
 /*borders styles----*/
@@ -371,6 +410,7 @@ footer a{
 .flex-row{
     display: flex;
 }
+
 /*Media query for smaller desktop screens and smaller*/
 @media screen and (max-width: 980px){
     header h1 a {
@@ -468,45 +508,11 @@ footer a{
     }
 }
 
-/*re ordered contact form*/
-.contact-form {
-    order: 3;
-}
+
 
 .some-class{
     text-shadow: 5px 10px 15px black;
     box-shadow: 5px 10px 15px rgba(0,0,0,0.25);
-}
-
-header nav ul li a:hover {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-    border-radius: 15px;
-    text-shadow: none;
-}
-  
-.hero-form button:hover {
-    background-color: var(--tertiary-color);  
-}
-  
-.contact-form button:hover {
-    color: var(--primary-color);
-    background: var(--tertiary-color);
-}
-
-.form-input:focus {
-    background-color: rgba(255,255,255, 1);
-    outline: none;
-}
-.step:last-child {
-    border-bottom: 1px solid var(--tertiary-color);
-    border-bottom: none;
-}
-.step:not(:last-child){
-    border-bottom: 1px solid var(--tertiary-color);
-}
-.step:nth-child(even) {
-    border-bottom: 1px solid var(--tertiary-color);
 }
 .checkbox-wrapper input, .radio-wrapper input{
     opacity: 0;
@@ -551,13 +557,13 @@ header nav ul li a:hover {
     left: -26px;
     top: 1px;
     transform: rotate(-58deg);
-  }
-  .checkbox-wrapper input:checked, .radio-wrapper input:checked {
+}
+.checkbox-wrapper input:checked, .radio-wrapper input:checked {
     opacity: 1;
-  }
-  .checkbox-wrapper input:checked + label, .radio-wrapper input:checked + label{
-      font-weight: bold;
-  }
-  .checkbox-wrapper input:checked + label::after, .radio-wrapper input + label::after{
-      content:"";
-  }
+}
+.checkbox-wrapper input:checked + label, .radio-wrapper input:checked + label{
+    font-weight: bold;
+}
+.checkbox-wrapper input:checked + label::after, .radio-wrapper input + label::after{
+    content:"";
+}
